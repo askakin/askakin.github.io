@@ -21,6 +21,7 @@
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
+      box-sizing: border-box;
     }
 
     .top, .center, .bottom {
@@ -37,6 +38,9 @@
              align-self: flex-end;
              text-align: right;
              width: 100%;
+             flex-shrink: 1;
+             flex-grow: 0;
+             white-space: normal;
     }
     .bottom { font-size: clamp(14px, 1.5vw, 24px); }
 
