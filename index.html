@@ -2,89 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AKIN Consulting</title>
-
+  
   <link rel="icon" type="image/png" sizes="16x16" href="favicon_a.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon_a.png">
   <link rel="icon" type="image/png" sizes="128x128" href="favicon_a.png">
   
   <style>
-    html, body {
-      background: #0033A0; /* Deep blue */
-      position: relative;
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #0033A0;
       color: white;
       font-family: "Helvetica Neue", Helvetica, sans-serif;
       font-weight: 200;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: stretch;
+      text-align: center;
     }
 
-    .top-left {
+    .top, .center, .bottom {
       padding: 20px;
-      font-size: 2vw;
-      font-weight: 200;
-      align-self: flex-start;
     }
 
-    .center-text {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      padding-right: 20px;
-      font-size: 5vw;
-      text-align: right;
-      line-height: 1.3;
-      font-weight: 200;
-      width: 100%;
-      overflow: hidden;
-    }
+    .top { font-size: clamp(16px, 2vw, 32px); }
+    .center { font-size: clamp(20px, 6vw, 60px); line-height: 1.3; }
+    .bottom { font-size: clamp(14px, 1.5vw, 24px); }
 
-    .center-text .underline {
+    .underline {
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-underline-offset: 6px;
     }
-
-    .bottom-center {
-      text-align: center;
-      font-size: 1.5vw;
-      font-weight: 200;
-      position: fixed;
-      bottom: 2vh;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    @media (max-width: 768) {
-      .top-left {
-        font-size: 4vw;
-      }
-      .center-text {
-        font-size: 8vw;
-      }
-      .bottom-center {
-        font-size: 3vw;
-      }
-    }
-    
   </style>
 </head>
 <body>
-  <div class="top-left">AKIN CONSULTING</div>
-  <div class="center-text">
+  <div class="top">AKIN CONSULTING</div>
+  <div class="center">
     <p>If you ask the<br>
     ordinary, how will<br>
     you create the<br>
     <span class="underline">extraordinary</span>?</p>
   </div>
-  <div class="bottom-center">ask@akin.consulting</div>
+  <div class="bottom">ask@akin.consulting</div>
 </body>
 </html>
