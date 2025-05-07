@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>AKIN Consulting</title>
   
   <link rel="icon" type="image/png" sizes="16x16" href="favicon_a.png">
@@ -19,18 +19,20 @@
     html, body {
       height: 100%;
       overflow: hidden;
+      -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS */
     }
     
     body {
       background: #0033A0;
       color: white;
-      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 200;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      text-align: center;
-      padding: 20px;
+      padding: min(20px, 5vw); /* Responsive padding */
+      min-height: 100%;
+      -webkit-text-size-adjust: 100%; /* Prevents font scaling in landscape */
     }
     
     .top {
@@ -38,6 +40,7 @@
       align-self: flex-start;
       text-align: left;
       width: 100%;
+      padding-bottom: 10px;
     }
     
     .center {
@@ -55,17 +58,41 @@
     
     .center p {
       margin: 0;
+      max-width: 100%;
+      word-wrap: break-word;
     }
     
     .bottom {
       font-size: clamp(14px, 1.5vw, 24px);
       width: 100%;
+      padding-top: 10px;
     }
     
     .underline {
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-underline-offset: 6px;
+    }
+    
+    /* Mobile specific adjustments */
+    @media screen and (max-width: 480px) {
+      .center {
+        font-size: clamp(18px, 8vw, 42px);
+      }
+      
+      .underline {
+        text-underline-offset: 4px;
+      }
+    }
+    
+    /* Ensure notch/safe area compatibility on modern phones */
+    @supports (padding: env(safe-area-inset-left)) {
+      body {
+        padding-left: max(min(20px, 5vw), env(safe-area-inset-left));
+        padding-right: max(min(20px, 5vw), env(safe-area-inset-right));
+        padding-top: max(min(20px, 5vw), env(safe-area-inset-top));
+        padding-bottom: max(min(20px, 5vw), env(safe-area-inset-bottom));
+      }
     }
   </style>
 </head>
