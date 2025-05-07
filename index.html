@@ -10,9 +10,18 @@
   <link rel="icon" type="image/png" sizes="128x128" href="favicon_a.png">
   
   <style>
-    body {
+    * {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    body {
       background: #0033A0;
       color: white;
       font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -21,29 +30,38 @@
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
-      box-sizing: border-box;
-    }
-
-    .top, .center, .bottom {
       padding: 20px;
     }
-
-    .top { font-size: clamp(16px, 2vw, 32px); 
-          align-self: flex-start;
-          text-align: left;
-          width: calc(100% - 20px);;
+    
+    .top {
+      font-size: clamp(16px, 2vw, 32px);
+      align-self: flex-start;
+      text-align: left;
+      width: 100%;
     }
-    .center { font-size: clamp(20px, 6vw, 60px); 
-             line-height: 1.3;
-             align-self: flex-end;
-             text-align: right;
-             width: calc(100% - 20px);;
-             flex-shrink: 1;
-             flex-grow: 0;
-             white-space: normal;
+    
+    .center {
+      font-size: clamp(20px, 6vw, 60px);
+      line-height: 1.3;
+      align-self: flex-end;
+      text-align: right;
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
     }
-    .bottom { font-size: clamp(14px, 1.5vw, 24px); }
-
+    
+    .center p {
+      margin: 0;
+    }
+    
+    .bottom {
+      font-size: clamp(14px, 1.5vw, 24px);
+      width: 100%;
+    }
+    
     .underline {
       text-decoration: underline;
       text-decoration-thickness: 2px;
